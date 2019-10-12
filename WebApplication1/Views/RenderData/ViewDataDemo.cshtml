@@ -1,0 +1,11 @@
+﻿@{
+    var hobby = ViewData["hobby"] as string[];
+}
+
+<h3>@ViewData["title"]</h3>
+
+<ul>
+    <li>名前: @ViewData["name"]</li>
+    <li>誕生日: @ViewData["birthday"]</li>
+    <li>趣味: @hobby[0], @hobby[1], @hobby[2]</li>
+</ul>

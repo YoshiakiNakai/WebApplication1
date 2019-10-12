@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1
 {
+    //コントローラクラスの作成
 	public class ControllerNky : Controller
 	{
 		//// GET: /<controller>/

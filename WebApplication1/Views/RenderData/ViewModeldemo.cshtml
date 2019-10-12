@@ -1,0 +1,10 @@
+﻿<!-- 引数:model 型:Person -->
+@model WebApplication1.Models.Person;
+
+<h3>@ViewBag.title</h3>
+
+<ul>
+    <li>名前: @Model.Name</li>
+    <li>誕生日: @Model.Birthday</li>
+    <li>趣味: @Model.Hobby[0], @Model.Hobby[1], @Model.Hobby[2]</li>
+</ul>

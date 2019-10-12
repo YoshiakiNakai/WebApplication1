@@ -1,0 +1,11 @@
+﻿@{
+    var hobby = ViewBag.hobby as string[];
+}
+
+<h3>@ViewBag.title</h3>
+
+<ul>
+    <li>名前: @ViewBag.name</li>
+    <li>誕生日: @ViewBag.birthday</li>
+    <li>趣味: @hobby[0], @hobby[1], @hobby[2]</li>
+</ul>

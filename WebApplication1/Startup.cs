@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+//DI
+using MvcMovie.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace WebApplication1
 {
     public class Startup
@@ -24,6 +28,11 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            
+            //DI
+            services.AddDbContext<MvcMovieContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));	//reflectionだね
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +61,7 @@ namespace WebApplication1
 				//URLルーティングロジックの設定
 				endpoints.MapControllerRoute(
 					name: "default",
-					pattern: "{controller=ControllerNky}/{action=hello}/{id?}");
+					pattern: "{controller=ControllerNky}/{action=Index}/{id?}");
 				//優先順位
 				//実在するファイル、Pagesフォルダ内のhtmlファイル。
 				//動的処理、コントローラーとか
